@@ -43,7 +43,7 @@ NSData *data = [NSURLSession sendSynchronousUploadTaskWithRequest:uploadRequest 
 Florian Schliep
 
 - http://github.com/floschliep
-- http://twitter.com/flotcf
+- http://twitter.com/floschliep
 - http://floschliep.com
 
 ## License
