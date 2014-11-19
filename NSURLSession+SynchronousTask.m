@@ -76,6 +76,7 @@
         if (error) {
             *error = taskError;
         }
+        dispatch_semaphore_signal(semaphore);
     }] resume];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     
@@ -93,6 +94,7 @@
         if (error) {
             *error = taskError;
         }
+        dispatch_semaphore_signal(semaphore);
     }] resume];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     
@@ -112,6 +114,7 @@
         if (error) {
             *error = taskError;
         }
+        dispatch_semaphore_signal(semaphore);
     }] resume];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     
@@ -129,6 +132,7 @@
         if (error) {
             *error = taskError;
         }
+        dispatch_semaphore_signal(semaphore);
     }] resume];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     
