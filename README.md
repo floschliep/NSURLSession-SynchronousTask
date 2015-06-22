@@ -5,6 +5,16 @@ NSURLSession+SynchronousTask
 
 Internally the category uses GCD to wait for the tasks to finish and `NSURLSession`'s shared instance `sharedSession` to perform the tasks.  
 
+## Installation
+
+[CocoaPods](http://cocoapods.org) is the recommended method of installing `NSURLSession-SynchronousTask`. Simply add the following line to your `Podfile`:
+
+#### Podfile
+
+```ruby
+pod 'NSURLSession-SynchronousTask'
+```
+
 ## Usage
 
 ### NSURLSessionDataTask
