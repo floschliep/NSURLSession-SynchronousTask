@@ -1,9 +1,9 @@
 NSURLSession+SynchronousTask
 ============================
 
-`NSURLSession+SynchronousTask` is an NSURLSession category which brings NSURLConnection-like (remember `sendSynchronousRequest:returningResponse:error:`?) synchronous tasks to NSURLSession.
+`NSURLSession+SynchronousTask` is an `NSURLSession` category which brings `NSURLConnection`-like (remember `sendSynchronousRequest:returningResponse:error:`?) synchronous tasks to `NSURLSession`.
 
-Internally the category uses GCD to wait for the tasks to finish and `NSURLSession`'s shared instance `sharedSession` to perform the tasks.  
+Internally the category uses GCD to wait for the tasks to finish.
 
 ## Installation
 
@@ -23,7 +23,7 @@ pod 'NSURLSession-SynchronousTask'
 NSURL *url = ...
 NSError *error = nil;
 NSURLResponse *response = nil;
-NSData *data = [NSURLSession sendSynchronousDataTaskWithURL:url returningResponse:&response error:&error];
+NSData *data = [[NSURLSession sharedSession] sendSynchronousDataTaskWithURL:url returningResponse:&response error:&error];
 ...
 ```
 ### NSURLSessionDownloadTask
@@ -32,7 +32,7 @@ NSData *data = [NSURLSession sendSynchronousDataTaskWithURL:url returningRespons
 NSURL *url = ...
 NSError *error = nil;
 NSURLResponse *response = nil;
-NSURL *fileURL = [NSURLSession sendSynchronousDownloadTaskWithURL:url returningResponse:&response error:&error];
+NSURL *fileURL = [[NSURLSession sharedSession] sendSynchronousDownloadTaskWithURL:url returningResponse:&response error:&error];
 ...
 ```
 ### NSURLSessionUploadTask
@@ -42,7 +42,7 @@ NSURLRequest *uploadRequest = ...
 NSData *dataToBeUploaded = ...
 NSError *error = nil;
 NSURLResponse *response = nil;
-NSData *data = [NSURLSession sendSynchronousUploadTaskWithRequest:uploadRequest fromData:dataToBeUploaded returningResponse:&response error:&error];
+NSData *data = [[NSURLSession sharedSession] sendSynchronousUploadTaskWithRequest:uploadRequest fromData:dataToBeUploaded returningResponse:&response error:&error];
 ...
 ```
 
